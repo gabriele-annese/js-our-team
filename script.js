@@ -75,7 +75,6 @@ accesBtn.addEventListener('click',  function () {
         }
     }
 
-    const cardContainer = document.querySelector('.team-container');
     if(imgfound = true){
         cardContainer.innerHTML += `
         <div class="team-card">
@@ -83,8 +82,8 @@ accesBtn.addEventListener('click',  function () {
                 <img src="img/${img}"></img>
             </div>
             <div class="card-text">
-                ${Name}
-                ${job}
+            <h3>${Name}</h3>
+            <p>${job}</p>
             </div>
         </div>
         `;
@@ -96,7 +95,7 @@ accesBtn.addEventListener('click',  function () {
 // funzione genera card
 function genCard(teamMember, cardContainer){
     cardContainer.innerHTML = "";
-    for(let i = 0; i < teamMember.length; i++){
+    for(let i = 0; i < teamMember.length ; i++){
         const member = teamMember[i];
         console.log(member);
     
@@ -107,8 +106,8 @@ function genCard(teamMember, cardContainer){
                 <img src= "${member.img}" ></img>
             </div>
             <div class="card-text">
-                ${member.name}
-                ${member.job}
+                <h3>${member.name}</h3>
+                <p>${member.job}</p>
             </div>
         </div>`
     }
