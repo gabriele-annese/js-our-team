@@ -52,6 +52,43 @@ const inputImg = document.querySelector('#image');
 const accesBtn = document.querySelector('#addMemberButton');
 
 accesBtn.addEventListener('click',  function () {
+    const Name = inputName.value.trim().toLowerCase();
+    console.log(Name);
+    const job = inputJob.value.trim().toLowerCase();
+    console.log(job);
+    const img = inputImg.value.trim().toLowerCase();
+    console.log(img);
+    // output
+    const imgArray = [
+        {
+            img: 'new-team-member-01.jpg',
+            img: 'new-team-member-02.jpg',
+            img: 'new-team-member-03.jpg',
+            img: 'new-team-member-04.jpg',
+        }
+    ];
+    let imgfound = false;
+    for(let i = 0; i < imgArray.length; i++){
+        if(imgArray[i] == img){
+            imgfound = true;
+            break;
+        }
+    }
+
+    const cardContainer = document.querySelector('.team-container');
+    if(imgfound = true){
+        cardContainer.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+                <img src="img/${img}"></img>
+            </div>
+            <div class="card-text">
+                ${Name}
+                ${job}
+            </div>
+        </div>
+        `;
+    }
     
 });
 
@@ -73,7 +110,6 @@ function genCard(teamMember, cardContainer){
                 ${member.name}
                 ${member.job}
             </div>
-        </div>
-        `
+        </div>`
     }
 }
