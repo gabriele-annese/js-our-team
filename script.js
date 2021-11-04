@@ -36,5 +36,27 @@ const teamMember = [
         img: 'img/angela-caroll-chief-editor.jpg',
     },
 ];
+console.log(teamMember)
 
 // creare nodo dove inserire card
+const cardContainer = document.querySelector(".team-container");
+console.log(cardContainer)
+
+// crare loop per array
+for(let i = 0; i < teamMember.length; i++){
+    const member = teamMember[i];
+    console.log(member);
+
+    //creare aggiungere il markup
+    cardContainer.innerHTML += `
+    <div class="team-card">
+        <div class="card-image">
+            <img src= "${member.img}" ></img>
+        </div>
+        <div class="card-text">
+            ${member.name}
+            ${member.job}
+        </div>
+    </div>
+    `
+}
