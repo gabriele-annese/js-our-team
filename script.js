@@ -41,22 +41,39 @@ console.log(teamMember)
 // creare nodo dove inserire card
 const cardContainer = document.querySelector(".team-container");
 console.log(cardContainer)
+const teams = genCard(teamMember, cardContainer);
+cardContainer.append(teams)
 
-// crare loop per array
-for(let i = 0; i < teamMember.length; i++){
-    const member = teamMember[i];
-    console.log(member);
+// genrare card tramite imput
 
-    //creare aggiungere il markup
-    cardContainer.innerHTML += `
-    <div class="team-card">
-        <div class="card-image">
-            <img src= "${member.img}" ></img>
+const inputName = document.querySelector('#name');
+const inputJob = document.querySelector('#role');
+const inputImg = document.querySelector('#image');
+const accesBtn = document.querySelector('#addMemberButton');
+
+accesBtn.addEventListener('click',  function () {
+    
+});
+
+
+// funzione genera card
+function genCard(teamMember, cardContainer){
+    cardContainer.innerHTML = "";
+    for(let i = 0; i < teamMember.length; i++){
+        const member = teamMember[i];
+        console.log(member);
+    
+        //creare aggiungere il markup
+        cardContainer.innerHTML += `
+        <div class="team-card">
+            <div class="card-image">
+                <img src= "${member.img}" ></img>
+            </div>
+            <div class="card-text">
+                ${member.name}
+                ${member.job}
+            </div>
         </div>
-        <div class="card-text">
-            ${member.name}
-            ${member.job}
-        </div>
-    </div>
-    `
+        `
+    }
 }
