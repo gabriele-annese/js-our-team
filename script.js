@@ -16,35 +16,35 @@ const teamMember = [
         img: 'img/walter-gordon-office-manager.jpg',
     },
     {
-        name: 'Wayne Barnett',
-        job: 'Founder & CEO',
+        name: 'Scott Estrada',
+        job: 'Developer',
         img: 'img/scott-estrada-developer.jpg',
     },
     {
-        name: 'Wayne Barnett',
-        job: 'Founder & CEO',
+        name: 'Angela Caroll',
+        job: 'Chief Editor',
         img: 'img/angela-caroll-chief-editor.jpg',
     },
     {
-        name: 'Wayne Barnett',
-        job: 'Founder & CEO',
+        name: 'Angela Lopez',
+        job: 'Social Media Manager',
         img: 'img/angela-lopez-social-media-manager.jpg',
     },
     {
-        name: 'Wayne Barnett',
-        job: 'Founder & CEO',
-        img: 'img/angela-caroll-chief-editor.jpg',
-    },
+        name: 'Barbara Ramos',
+        job: 'Graphic Designer',
+        img: 'img/barbara-ramos-graphic-designer.jpg',
+    }
 ];
 console.log(teamMember)
 
 // creare nodo dove inserire card
 const cardContainer = document.querySelector(".team-container");
-console.log(cardContainer)
-const teams = genCard(teamMember, cardContainer);
-cardContainer.append(teams)
+console.log(cardContainer);
+ genCard(teamMember, cardContainer);
 
-// genrare card tramite imput
+
+// genrare card tramite input
 
 const inputName = document.querySelector('#name');
 const inputJob = document.querySelector('#role');
@@ -91,7 +91,6 @@ accesBtn.addEventListener('click',  function () {
     
 });
 
-
 // funzione genera card
 function genCard(teamMember, cardContainer){
     cardContainer.innerHTML = "";
@@ -103,7 +102,7 @@ function genCard(teamMember, cardContainer){
         cardContainer.innerHTML += `
         <div class="team-card">
             <div class="card-image">
-                <img src= "${member.img}" ></img>
+                <img src= "${member.img}"></img>
             </div>
             <div class="card-text">
                 <h3>${member.name}</h3>
